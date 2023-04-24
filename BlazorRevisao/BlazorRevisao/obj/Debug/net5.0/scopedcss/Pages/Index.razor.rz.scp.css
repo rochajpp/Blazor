@@ -1,0 +1,11 @@
+body[b-tx6ovxyq02] {
+
+}
+
+
+.delBtn[b-tx6ovxyq02]{
+    border: none;
+}
+.delBtn:hover .oi[b-tx6ovxyq02]{
+    color: red;
+}

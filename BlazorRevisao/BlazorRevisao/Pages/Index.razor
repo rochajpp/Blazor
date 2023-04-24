@@ -1,0 +1,77 @@
+﻿@page "/"
+@inject HttpClient http;
+
+<h1>Tarefas</h1>
+
+@if(tarefas == null)
+{
+    <p>Carregando...</p>
+} else if (!tarefas.Any())
+{
+    <p>Lista vazia!</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Data de Criação</th>
+                <th>Concluída</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(var tarefa in tarefas)
+            {
+                <tr>
+                    <td>@tarefa.Descricao</td>
+                    <td>@tarefa.DataCriacao</td>
+                    <td>
+                        <input style="cursor: pointer;" type="checkbox" @bind="@tarefa.Concluida" /> 
+                        @if (tarefa.Concluida) 
+                        { 
+                            
+                            <text> Feito</text>
+                        }
+                        else
+                        {
+                            <text> Pendente</text>
+                        }
+                    </td>
+                    <td><button @onclick="@(() => DeletarTarefa(@tarefa.ID))" class="delBtn"><i class="oi oi-trash"></i></button></td>
+                </tr>
+            }
+        </tbody>
+        <a href="register"><button class="btn btn-primary">Nova Tarefa</button></a>
+        
+    </table>
+}
+
+
+@code{
+
+    protected override async Task OnInitializedAsync()
+    {
+        tarefas = await http.GetFromJsonAsync<List<Tarefa>>("dados/tarefas.json");
+    }
+
+    public class Tarefa
+    {
+        public Guid ID;
+        public string Descricao { get; set; }
+        public bool Concluida{ get; set; }
+        public DateTime DataCriacao { get; set; }
+
+    }
+
+    dynamic novaTarefa;
+
+    List<Tarefa> tarefas = new List<Tarefa>();
+
+    public void DeletarTarefa(Guid id)
+    {
+        tarefas.Remove(tarefas.First(x => x.ID == id));
+    }
+
+}
