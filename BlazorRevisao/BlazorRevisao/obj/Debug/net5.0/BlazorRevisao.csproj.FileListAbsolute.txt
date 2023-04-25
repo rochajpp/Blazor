@@ -629,8 +629,4 @@ C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\obj\Debug\ne
 C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\obj\Debug\net5.0\refint\BlazorRevisao.dll
 C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\obj\Debug\net5.0\BlazorRevisao.pdb
 C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\obj\Debug\net5.0\ref\BlazorRevisao.dll
-C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\obj\Debug\net5.0\RazorDeclaration\Pages\Register.razor.g.cs
-C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\obj\Debug\net5.0\Razor\Pages\Register.razor.g.cs
 C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css
-C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\obj\Debug\net5.0\RazorDeclaration\Shared\Teste.razor.g.cs
-C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\obj\Debug\net5.0\Razor\Shared\Teste.razor.g.cs

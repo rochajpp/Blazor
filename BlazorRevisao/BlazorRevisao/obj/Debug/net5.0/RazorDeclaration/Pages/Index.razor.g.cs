@@ -91,7 +91,7 @@ using BlazorRevisao.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 52 "C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\Pages\Index.razor"
+#line 53 "C:\Users\joaopaulo.rocha\Desktop\Blazor\BlazorRevisao\BlazorRevisao\Pages\Index.razor"
       
 
     protected override async Task OnInitializedAsync()
@@ -106,15 +106,44 @@ using BlazorRevisao.Shared;
         public bool Concluida{ get; set; }
         public DateTime DataCriacao { get; set; }
 
+
+        public Tarefa(){}
+        public Tarefa(string tarefa)
+        {
+            this.Descricao = tarefa;
+            this.ID = Guid.NewGuid();
+            this.Concluida = false;
+            this.DataCriacao = DateTime.Now;
+        }
     }
 
-    dynamic novaTarefa;
+    public class NovaTarefa
+    {
+        public Guid ID{ get; set; }
+        public string Descricao { get; set; }
+        public bool Concluida{ get; set; }
+        public DateTime DataCriacao{ get; set; }
 
-    List<Tarefa> tarefas = new List<Tarefa>();
+
+    }
+
+    string novaTarefa="";
+
+    public List<Tarefa> tarefas = new List<Tarefa>();
 
     public void DeletarTarefa(Guid id)
     {
         tarefas.Remove(tarefas.First(x => x.ID == id));
+    }
+
+    public void AddTarefa()
+    {
+        if (novaTarefa != "")
+        {
+            Tarefa nt = new Tarefa(novaTarefa);
+            tarefas.Add(nt);
+            novaTarefa = "";
+        }
     }
 
 
