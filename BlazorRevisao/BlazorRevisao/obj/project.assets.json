@@ -1337,19 +1337,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joaopaulo.rocha\\.nuget\\packages\\": {}
+    "C:\\Users\\joaopaulo.rocha\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaopaulo.rocha\\Desktop\\Blazor\\BlazorRevisao\\BlazorRevisao\\BlazorRevisao.csproj",
+      "projectUniqueName": "C:\\Users\\joaopaulo.rocha\\Documents\\Blazor\\BlazorRevisao\\BlazorRevisao\\BlazorRevisao.csproj",
       "projectName": "BlazorRevisao",
-      "projectPath": "C:\\Users\\joaopaulo.rocha\\Desktop\\Blazor\\BlazorRevisao\\BlazorRevisao\\BlazorRevisao.csproj",
+      "projectPath": "C:\\Users\\joaopaulo.rocha\\Documents\\Blazor\\BlazorRevisao\\BlazorRevisao\\BlazorRevisao.csproj",
       "packagesPath": "C:\\Users\\joaopaulo.rocha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaopaulo.rocha\\Desktop\\Blazor\\BlazorRevisao\\BlazorRevisao\\obj\\",
+      "outputPath": "C:\\Users\\joaopaulo.rocha\\Documents\\Blazor\\BlazorRevisao\\BlazorRevisao\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\joaopaulo.rocha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1411,7 +1416,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

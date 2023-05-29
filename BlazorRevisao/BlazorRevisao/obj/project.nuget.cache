@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5ymf01OQCvDW7UXuaivb/b0LQ2obLM85EFLhuBzNJSjhw6Jb18vJe1dpMKag4pii4l5NA8sUJIKf+JW40FDHKQ==",
+  "dgSpecHash": "mT5LZIn1eBjvp4XuUbAdVhXPyZg5wzorUx7z7FHj2a35oBf8jJnfp9JVhKCKfCU+4jfIxfDjfCA17GbxrZm+PQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joaopaulo.rocha\\Desktop\\Blazor\\BlazorRevisao\\BlazorRevisao\\BlazorRevisao.csproj",
+  "projectFilePath": "C:\\Users\\joaopaulo.rocha\\Documents\\Blazor\\BlazorRevisao\\BlazorRevisao\\BlazorRevisao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaopaulo.rocha\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.17\\microsoft.aspnetcore.authorization.5.0.17.nupkg.sha512",
     "C:\\Users\\joaopaulo.rocha\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.17\\microsoft.aspnetcore.components.5.0.17.nupkg.sha512",
