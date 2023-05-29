@@ -1,11 +1,18 @@
 ﻿@page "/"
-
+<!-- ============================ Sem Laços ==================================== -->
 <h1>Pizza</h1>
 <div>
     <h2>Pizza: @Pizza.Nome</h2>
     <h2>Data: @Pizza.DataCadastro.ToString("dd MM yyyy")</h2>
 </div>
+
+<!-- ============================================================================ -->
+
+
 <hr>
+
+<!--========================== Utilizando FOREACH --============================= -->
+
 <h1>Pizzas (foreach)</h1>
 @foreach(var produto in GetProdutos()){
     <div>
@@ -13,6 +20,11 @@
         <h2>Data: @produto.DataCadastro.ToString("dd MM yyyy")</h2>
     </div>
 }
+<!-- ==============================================================================-->
+
+<hr>
+
+<!--=============================== Utilizando FOR ================================-->
 
 <h1>Pizzas(for)</h1>
 @for(var i = 0; i < produtos.Count; i++){
@@ -21,7 +33,7 @@
         <h2>Data: @produtos[i].DataCadastro.ToString("dd MM yyyy")</h2>
     </div>
 }
-
+<!-- ============================================================================ -->
 
 @code{
 
