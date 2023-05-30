@@ -1,5 +1,5 @@
 ﻿@page "/"
-<!-- ============================ Sem Laços ==================================== -->
+ @* <!-- ============================ Sem Laços ==================================== -->
 
 <h1>Pizza</h1>
 <div>
@@ -7,20 +7,23 @@
     <h2>Data: @Pizza.DataCadastro.ToString("dd MM yyyy")</h2>
 </div>
 
-<!-- ============================================================================ -->
+<!-- ============================================================================ --> *@
 
 
 <hr>
 
 <!--========================== Utilizando FOREACH --============================= -->
 
-<h1>Pizzas (foreach)</h1>
+@* <h1>Pizzas (foreach)</h1>
 @foreach(var produto in GetProdutos()){
-    <div>
-        <h2>Pizza: @produto.Nome</h2>
-        <h2>Data: @produto.DataCadastro.ToString("dd MM yyyy")</h2>
-    </div>
-}
+   
+    @if(produto.Nome.Contains("Calabreza")){
+        <h3><b>Pizza de Calabreza com desconto de 20%</b></h3>
+    }
+    <h2>Pizza: @produto.Nome</h2>
+    <h2>Data: @produto.DataCadastro.ToString("dd MM yyyy")</h2>
+    
+} *@
 
 <!-- ==============================================================================-->
 
@@ -28,18 +31,40 @@
 
 <!--=============================== Utilizando FOR ================================-->
 
-<h1>Pizzas(for)</h1>
+@* <h1>Pizzas(for)</h1>
 @for(var i = 0; i < produtos.Count; i++){
-    <div>
-        <h2>@(i + 1) - Pizza: @produtos[i].Nome</h2>
-        <h2>Data: @produtos[i].DataCadastro.ToString("dd MM yyyy")</h2>
-    </div>
-}
+    @if(i == produtos.Count-1 ){
+        <h3>Este é o último Produto</h3>
+    }
+    <h2>@(i + 1) - Pizza: @produtos[i].Nome</h2>
+    <h2>Data: @produtos[i].DataCadastro.ToString("dd MM yyyy")</h2>
+
+} *@
 
 <!-- ============================================================================ -->
 
+@switch(dia){
+    case "Monday":
+        menssagem  = "Este é o segundo dia da semana";
+        break;
+    case "Thrusday":
+        menssagem = "Falta um dia para sexta";
+        break;
+    case "Friday":
+        menssagem = "Amanhã é sábado";
+        break;
+    default:
+        menssagem = "Hoje é " + dia;
+        break;
+}
+
+<p><h1>@menssagem</h1></p>
+
 @code{
 
+
+    string dia = DateTime.Now.DayOfWeek.ToString();
+    string menssagem = "";
     public Produto Pizza { get { return GetProduto();}}
 
     public List<Produto> produtos { get{return GetProdutos(); } }
