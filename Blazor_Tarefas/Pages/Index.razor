@@ -1,0 +1,60 @@
+﻿@using System
+@inject HttpClient http
+
+@page "/"
+
+<h1>Lista de Tarefas</h1>
+
+@if(tarefas == null){
+    <p>Carregando...</p>
+} else if(!tarefas.Any()){
+    <p>Nenhuma tarefa disponível!</p>
+} else{
+    <table class = "table">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Data de Criação</th>
+                <th>Concluída</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            @foreach(var tarefa in tarefas){
+                <tr>
+                    <th>@tarefa.descricao</th>
+                    <th>@tarefa.dataCriacao</th>
+                    <th><input type="checkbox" @bind="@tarefa.concluida"> @tarefa.concluida</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <input @bind="novaTarefa" plcaeholder="Nova Tarefa">
+    <button class="btn btn-primary" @onclick="AdicionarTarefa">Adicionar</button>
+}
+
+
+@code{
+
+    protected override async Task OnInitializedAsync(){
+        tarefas = await http.GetFromJsonAsync<List<Tarefa>>("dados/tarefas.json");
+
+    }
+    public class Tarefa{
+        public Guid id { get; set;}
+        public string descricao { get; set;}
+        public bool concluida { get; set;}
+        public DateTime dataCriacao { get; set; }
+    }
+    List<Tarefa> tarefas = new List<Tarefa>();
+
+    string novaTarefa = "";
+
+    public void AdicionarTarefa(){
+        if(!string.IsNullOrEmpty(novaTarefa)){
+
+        }
+    }
+    
+
+}
