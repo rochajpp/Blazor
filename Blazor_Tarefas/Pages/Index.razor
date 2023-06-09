@@ -13,6 +13,7 @@
     <table class = "table">
         <thead>
             <tr>
+                <th>Ação</th>
                 <th>Descrição</th>
                 <th>Data de Criação</th>
                 <th>Concluída</th>
@@ -22,6 +23,7 @@
         <tbody>
             @foreach(var tarefa in tarefas){
                 <tr>
+                    <th><button @onclick= "@(() => deletarTarefa(@tarefa.id))"> <i class="oi oi-trash"></i> </button></th>
                     <th>@tarefa.descricao</th>
                     <th>@tarefa.dataCriacao</th>
                     <th><input type="checkbox" @bind="@tarefa.concluida"> @tarefa.concluida</th>
@@ -29,7 +31,7 @@
             }
         </tbody>
     </table>
-    <input @bind="novaTarefa" plcaeholder="Nova Tarefa">
+    <input @bind="novaTarefa" placeholder="Nova Tarefa">
     <button class="btn btn-primary" @onclick="AdicionarTarefa">Adicionar</button>
 }
 
@@ -52,8 +54,20 @@
 
     public void AdicionarTarefa(){
         if(!string.IsNullOrEmpty(novaTarefa)){
+            Tarefa tarefaNova = new Tarefa();
+            tarefaNova.id = Guid.NewGuid();
+            tarefaNova.descricao = novaTarefa;
+            tarefaNova.dataCriacao = DateTime.Now;
 
+            tarefas.Add(tarefaNova);
+            
+            novaTarefa = "";
         }
+    }
+
+    public void deletarTarefa(Guid id){
+
+        tarefas.Remove(tarefas.First(x => x.id == id));
     }
     
 
