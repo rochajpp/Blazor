@@ -1,0 +1,11 @@
+@page "/eventoTeste"
+
+<h1>Type the color:</h1>
+<input @bind-value="color" @bind-value:event="oninput">
+
+
+<div style="padding: 4rem; background-color: @color"></div>
+
+@code{
+    private string color = "white";
+}
