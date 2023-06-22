@@ -1,3 +1,4 @@
+<th><button @onclick= "@(() => deletaTarefa.InvokeAsync(tarefa))"> <i class="oi oi-trash"></i> </button></th>
 <th>@tarefa.descricao</th>
 <th>@tarefa.dataCriacao</th>
 <th><input type="checkbox" @bind="@tarefa.concluida"> @tarefa.concluida</th>
@@ -5,5 +6,7 @@
 @code{
 
     [Parameter] public Tarefa tarefa { get; set; }
+    // Passagem de um evento como parametro
+    [Parameter] public EventCallback<Tarefa> deletaTarefa { get; set; }
 
 }
