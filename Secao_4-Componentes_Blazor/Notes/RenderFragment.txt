@@ -1,0 +1,28 @@
+RenderFragment
+
+
+* Às vezes precisammos criar componenetes que combinem a marcação
+fornecida pelo cliente com sua própria saída renderizada.
+
+* O Recurso RenderFragment perimite adicionar dados, elementos,
+atibutos e conteúdo diverso ao fragmento e depois podemos inserir
+o fragmento em qualquer componenete usando o símbolo @NovoFragmento.
+
+Exemplo:
+
+
+    ==== Index.razor ==================================================
+
+        <Teste> <h1> Olá, Blazor </h1> </Teste>
+
+    ===================================================================
+
+    ===== Teste.razor =================================================
+
+        @ChildContent
+
+        @code{
+            [Parameter] public RenderFragment ChildContent { get; set; }
+        }
+
+    ====================================================================
