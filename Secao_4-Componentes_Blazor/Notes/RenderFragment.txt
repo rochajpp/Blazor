@@ -1,28 +1,47 @@
 RenderFragment
 
+========================================= Parte 1 ==============================================-
+        * Às vezes precisammos criar componenetes que combinem a marcação
+        fornecida pelo cliente com sua própria saída renderizada.
 
-* Às vezes precisammos criar componenetes que combinem a marcação
-fornecida pelo cliente com sua própria saída renderizada.
+        * O Recurso RenderFragment perimite adicionar dados, elementos,
+        atibutos e conteúdo diverso ao fragmento e depois podemos inserir
+        o fragmento em qualquer componenete usando o símbolo @NovoFragmento.
 
-* O Recurso RenderFragment perimite adicionar dados, elementos,
-atibutos e conteúdo diverso ao fragmento e depois podemos inserir
-o fragmento em qualquer componenete usando o símbolo @NovoFragmento.
+        Exemplo:
+
+            ==== Index.razor ==================================================
+                <Teste> <h1> Olá, Blazor </h1> </Teste>
+            ===================================================================
+
+            ===== Teste.razor =================================================
+                @ChildContent
+
+                @code{
+                    [Parameter] public RenderFragment ChildContent { get; set; }
+                }
+            ====================================================================
+==============================================================================================
+
+===================================== Parte 2 ======================================
 
 Exemplo:
 
 
-    ==== Index.razor ==================================================
+    ========== Index.razor =========================================
+        <Teste>
+            <conteudo1> <h1> Olá, Blazor </h1> </conteudo1>
+            <conteudo2> <h1> Tudo bem </h2> </conteudo2>
+        </Teste>
+    ================================================================
 
-        <Teste> <h1> Olá, Blazor </h1> </Teste>
+    ========== Teste.razor =========================================
 
-    ===================================================================
-
-    ===== Teste.razor =================================================
-
-        @ChildContent
+        @Conteudo1
+        @Conteudo2
 
         @code{
-            [Parameter] public RenderFragment ChildContent { get; set; }
+            [Parameter] public RenderFragment Conteudo1 { get; set; }
+            [Parameter] public RenderFragment Conteudo2 { get; set; }
         }
-
-    ====================================================================
+    ================================================================   
