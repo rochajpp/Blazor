@@ -23,6 +23,11 @@ RenderFragment
             ====================================================================
 ==============================================================================================
 
+
+
+
+
+
 ===================================== Parte 2 ======================================
 
 Exemplo:
@@ -45,3 +50,22 @@ Exemplo:
             [Parameter] public RenderFragment Conteudo2 { get; set; }
         }
     ================================================================   
+
+=====================================================================================
+
+
+
+
+
+=============================================== RenderFragment<T> ====================================================
+
+    * Além do conteúdo de marcação podemos também passar dados para um componente usando o recurso
+    RenderFragment<T> ou seja usando um RenderFragment de um tipo genérico.
+
+    * Um modelo de componente é definido especificando um ou mais parâmetros de componente do tipo
+    RenderFragment ou  RenderFragment<T>.
+
+    * Onde RenderFragment<T> usa um parâmetro de tipo que pode ser especificado quando o fragmento
+    de renderização for chamado.
+
+======================================================================================================================
