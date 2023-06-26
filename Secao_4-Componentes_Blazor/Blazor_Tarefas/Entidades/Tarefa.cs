@@ -1,5 +1,5 @@
 namespace Blazor_Tarefas.Entidades{ 
-
+    
     using System;
     public class Tarefa{
         public Guid id { get; set;}

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Blazor_Tarefas.Repositorios;
 
 namespace Blazor_Tarefas
 {
@@ -16,6 +17,8 @@ namespace Blazor_Tarefas
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
+
+            builder.Services.AddScoped<IRepositorio, Repositorio>();
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
