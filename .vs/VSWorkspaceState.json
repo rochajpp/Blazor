@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Blazor_Tarefas"
+    "\\Secao_4-Componentes_Blazor",
+    "\\Secao_4-Componentes_Blazor\\BlazorApp_Layouts"
   ],
-  "SelectedNode": "\\Blazor_Tarefas\\Program.cs",
+  "SelectedNode": "\\Secao_4-Componentes_Blazor\\BlazorApp_Layouts\\BlazorApp_Layouts.sln",
   "PreviewInSolutionExplorer": false
 }
